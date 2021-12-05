@@ -8,7 +8,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore.InMemory;
+using Ujjwal_Srivastava_Sprint_II.Repository;
+using Ujjwal_Srivastava_Sprint_II.DBAccess;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ujjwal_Srivastava_Sprint_II
 {
@@ -24,7 +29,23 @@ namespace Ujjwal_Srivastava_Sprint_II
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DBContext>(context => { context.UseInMemoryDatabase("ProjectApplication");});
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IProjectRepository, ProjectRepository>();
+            services.AddScoped<ITasksRepository, TasksRepository>();
             services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Project Api",
+                    Version = "v1",
+                    Description = "Contains Project info",
+                    Contact = new OpenApiContact
+                    {
+                    },
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,7 +55,13 @@ namespace Ujjwal_Srivastava_Sprint_II
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Project Api");
+                c.RoutePrefix = string.Empty;
+            });
+            app.UseDeveloperExceptionPage();
             app.UseRouting();
 
             app.UseAuthorization();
