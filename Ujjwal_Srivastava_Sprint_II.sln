@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.810.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ujjwal_Srivastava_Sprint_II", "Ujjwal_Srivastava_Sprint_II\Ujjwal_Srivastava_Sprint_II.csproj", "{6D3722C3-BD91-4695-B84F-54381AADE738}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRepository", "ProjectRepository\ProjectRepository.csproj", "{23E480CC-FFE6-4F69-8AC2-B9624517D7B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6D3722C3-BD91-4695-B84F-54381AADE738}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D3722C3-BD91-4695-B84F-54381AADE738}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D3722C3-BD91-4695-B84F-54381AADE738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23E480CC-FFE6-4F69-8AC2-B9624517D7B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23E480CC-FFE6-4F69-8AC2-B9624517D7B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23E480CC-FFE6-4F69-8AC2-B9624517D7B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23E480CC-FFE6-4F69-8AC2-B9624517D7B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using Ujjwal_Srivastava_Sprint_II.DBAccess;
-using Ujjwal_Srivastava_Sprint_II.Models;
+using ProjectRepository.DBAccess;
+using ProjectRepository.Models;
 
-namespace Ujjwal_Srivastava_Sprint_II.Repository
+namespace ProjectRepository.Repository
 {
     public class ProjectRepository : IProjectRepository
     {

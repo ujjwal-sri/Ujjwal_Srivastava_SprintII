@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Ujjwal_Srivastava_Sprint_II.Models;
-using Ujjwal_Srivastava_Sprint_II.Repository;
+using ProjectRepository.Models;
+using ProjectRepository.Repository;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

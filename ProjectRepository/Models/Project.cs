@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Ujjwal_Srivastava_Sprint_II.Models
+namespace ProjectRepository.Models
 {
     public class Project
     {

@@ -9,8 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.InMemory;
-using Ujjwal_Srivastava_Sprint_II.Repository;
-using Ujjwal_Srivastava_Sprint_II.DBAccess;
+using ProjectRepository.Repository;
+using ProjectRepository.DBAccess;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
@@ -31,7 +31,7 @@ namespace Ujjwal_Srivastava_Sprint_II
         {
             services.AddDbContext<DBContext>(context => { context.UseInMemoryDatabase("ProjectApplication");});
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IProjectRepository, ProjectRepository>();
+            services.AddScoped<IProjectRepository, ProjectRepository.Repository.ProjectRepository>();
             services.AddScoped<ITasksRepository, TasksRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>

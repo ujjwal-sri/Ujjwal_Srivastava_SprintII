@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Ujjwal_Srivastava_Sprint_II.Models;
-namespace Ujjwal_Srivastava_Sprint_II.Repository
+using ProjectRepository.Models;
+namespace ProjectRepository.Repository
 {
     public interface IProjectRepository
     {

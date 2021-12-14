@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using Ujjwal_Srivastava_Sprint_II.Models;
+using ProjectRepository.Models;
 
-namespace Ujjwal_Srivastava_Sprint_II.DBAccess
+namespace ProjectRepository.DBAccess
 {
     public class DBContext : DbContext
     {
