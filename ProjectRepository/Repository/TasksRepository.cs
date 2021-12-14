@@ -32,7 +32,12 @@ namespace ProjectRepository.Repository
 
         public void UpdateTasks(Tasks tasks)
         {
-            _context.Tasks.Update(tasks);
+            var updateTask = _context.Tasks.FirstOrDefault(x => x.ID == tasks.ID);
+            updateTask.ProjectID = tasks.ProjectID;
+            updateTask.Status = tasks.Status;
+            updateTask.AssiignedToUserID = tasks.AssiignedToUserID;
+            updateTask.Detail = tasks.Detail;
+            updateTask.CreatedOn = tasks.CreatedOn;
             _context.SaveChanges();
         }
     }

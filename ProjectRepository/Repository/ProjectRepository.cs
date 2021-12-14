@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using ProjectRepository.DBAccess;
 using ProjectRepository.Models;
@@ -18,6 +19,7 @@ namespace ProjectRepository.Repository
         {
             _context.Projects.Add(project);
             _context.SaveChanges();
+            _context.Entry(project).State = EntityState.Detached;
         }
 
         public List<Project> GetAllProject()
@@ -32,8 +34,12 @@ namespace ProjectRepository.Repository
 
         public void UpdateProject(Project project)
         {
-            _context.Projects.Update(project);
+            var updateProj = _context.Projects.FirstOrDefault(x => x.ID == project.ID);
+            updateProj.Name = project.Name;
+            updateProj.Detail = project.Detail;
+            updateProj.CreatedOn = project.CreatedOn;
             _context.SaveChanges();
+
         }
     }
 }
